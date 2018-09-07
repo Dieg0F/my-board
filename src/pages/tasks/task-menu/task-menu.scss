@@ -1,0 +1,40 @@
+task-menu {
+    .card-md,
+    .card-ios {
+        margin: 0px !important;
+        width: 100% !important;
+        border-radius: 0px !important;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+        min-height: 150px;
+        .app_title_menu {
+            width: 100% !important;
+            height: 80px;
+            padding-left: 16px;
+            text-align: left;
+            h1 {
+                line-height: 80px;
+            }
+        }
+    }
+
+    .menu_itens{
+      margin-top: 16px;
+      .button-ios,
+      .button-md {
+          background-color: transparent !important;
+          width: 100% !important;
+          border: none !important;
+          border-radius: 0px !important;
+          padding: 0px !important;
+          box-shadow: none !important;
+          .button-inner {
+              padding-left: 16px;
+              justify-content: left !important;
+          }
+      }
+      .logout{
+        position: fixed;
+        bottom: 15px;
+      }
+    }
+}

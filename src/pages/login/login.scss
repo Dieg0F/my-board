@@ -1,0 +1,21 @@
+page-login {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    .login {
+        margin-top: 35px;
+        padding: 16px;
+        .item-md,
+        .item-ios {
+            padding-left: 0px !important;
+            input {
+                padding: 0 5px;
+            }
+        }
+        .button-ios,
+        .button-md {
+            margin-top: 20px;
+            width: 100%;
+        }
+    }
+}

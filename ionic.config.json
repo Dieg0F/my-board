@@ -1,0 +1,7 @@
+{
+  "name": "my-board",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
