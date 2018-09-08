@@ -1,3 +1,4 @@
+import { StatusBar } from '@ionic-native/status-bar';
 import { Component } from '@angular/core';
 import { IonicPage, NavController } from 'ionic-angular';
 import { TaskMenuComponent } from './task-menu/task-menu';
@@ -14,6 +15,10 @@ export class TasksPage {
   public done = 'TaskDonePage';
 
   constructor(
-    public navCtrl: NavController
-    ) { }
+    public navCtrl: NavController,
+    public statusBar :StatusBar
+    ) {
+      this.statusBar.backgroundColorByHexString('D32F2F');
+      this.statusBar.styleLightContent();
+    }
 }
