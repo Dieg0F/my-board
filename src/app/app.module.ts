@@ -10,6 +10,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { TaskService } from '../services/tasks/task.services';
 import { Alert } from '../util/alert/alert';
 import { Loading } from '../util/loading/loading';
+import { Toast } from '../util/toast/toast';
 
 export const firebase = {
   apiKey: 'AIzaSyCCOGwrfmWqxw9CsW1N2yrV7oIHXF-kpeQ',
@@ -41,7 +42,8 @@ export const firebase = {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     TaskService,
     Alert,
-    Loading
+    Loading,
+    Toast
   ]
 })
 export class AppModule { }

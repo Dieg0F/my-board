@@ -11,6 +11,7 @@ import { Task } from '../../../model/task/task.model';
 export class TaskCreatePage {
 
   public changeBgModal: boolean = false;
+  public blockBtn: boolean = false;
   public task: Task = {
     title: ''
   };
@@ -27,6 +28,8 @@ export class TaskCreatePage {
   }
 
   addTask(){
+    if(!this.task.title) return;
+    this.blockBtn = true;
     this.taskService.create(this.task)
     .then(() => this.modalClose())
     .catch(() => console.log('Error'));

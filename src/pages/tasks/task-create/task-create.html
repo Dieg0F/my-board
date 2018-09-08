@@ -1,19 +1,19 @@
 <ion-content padding>
   <div class="modal_component">
     <ion-toolbar>
-      <ion-title>New Task</ion-title>
+      <ion-title>Nova Tarefa</ion-title>
     </ion-toolbar>
     <div class="new_task_body">
       <ion-item>
-        <ion-label stacked>Task Name</ion-label>
+        <ion-label stacked>Nome: </ion-label>
         <ion-input type="text" [(ngModel)]="task.title"></ion-input>
       </ion-item>
       <ion-item>
-        <ion-label stacked>Task Description</ion-label>
+        <ion-label stacked>Descrição: </ion-label>
         <ion-textarea type="text" [(ngModel)]="task.description"></ion-textarea>
       </ion-item>
-      <button ion-button (click)="addTask()">
-        Create
+      <button ion-button (click)="addTask()" [disabled]="blockBtn">
+        Criar
       </button>
     </div>
   </div>

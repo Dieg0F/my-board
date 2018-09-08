@@ -16,25 +16,36 @@ task-menu {
             }
         }
     }
-
-    .menu_itens{
-      margin-top: 16px;
-      .button-ios,
-      .button-md {
-          background-color: transparent !important;
-          width: 100% !important;
-          border: none !important;
-          border-radius: 0px !important;
-          padding: 0px !important;
-          box-shadow: none !important;
-          .button-inner {
-              padding-left: 16px;
-              justify-content: left !important;
-          }
-      }
-      .logout{
-        position: fixed;
-        bottom: 15px;
-      }
+    .menu_itens {
+        margin-top: 16px;
+        padding: 0 12px;
+        .button-ios,
+        .button-md {
+            background-color: transparent !important;
+            width: 100% !important;
+            border: none !important;
+            border-radius: 0px !important;
+            padding: 0px !important;
+            margin: 5px 0 !important;
+            box-shadow: none !important;
+            .button-inner {
+                padding-left: 12px;
+                min-width: 64px;
+                height: 36px;
+                justify-content: left !important;
+                .text {
+                    margin-top: 0px;
+                }
+                .icon {
+                    width: 20px;
+                    text-align: center;
+                    margin-right: 8px;
+                }
+            }
+        }
+        .logout {
+            position: fixed;
+            bottom: 15px;
+        }
     }
 }

@@ -29,6 +29,7 @@ export class TaskService {
       .set({
         uid,
         title: task.title,
+        description: task.description,
         done: false
       });
   }

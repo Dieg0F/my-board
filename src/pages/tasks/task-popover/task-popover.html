@@ -1,12 +1,16 @@
 <ion-content>
   <div class="popoverContent">
     <button ion-button icon-start (click)="editTask()">
-      <ion-icon name="md-create"></ion-icon>
-      Editar
+      <div class="icon">
+        <ion-icon name="md-create"></ion-icon>
+      </div>
+      <span class="text">Editar</span>
     </button>
     <button ion-button icon-start (click)="removeTaskAlert()">
-      <ion-icon name="md-close"></ion-icon>
-      Remover
+      <div class="icon">
+        <ion-icon name="md-close"></ion-icon>
+      </div>
+      <span class="text">Remover</span>
     </button>
   </div>
 </ion-content>

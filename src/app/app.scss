@@ -70,18 +70,21 @@ page-task-todo .fab-ios,
 }
 
 .primary-text-color,
-.content_list .button-ios,
-.content_list .button-md,
 .content_list .label-ios,
 .content_list .label-md,
-task-menu .menu_itens .button-ios,
-task-menu .menu_itens .button-md,
 .modal_component .title>.toolbar-title-md,
 .modal_component .title>.toolbar-title-ios {
     color: #212121 !important;
 }
 
-.secondary-text-color {
+.secondary-text-color,
+.content_list .button-ios,
+.content_list .button-md,
+task-menu .menu_itens .button-ios,
+task-menu .menu_itens .button-md,
+.content_list .text_body,
+.popoverContent .button-md,
+.popoverContent .button-ios {
     color: #757575
 }
 
@@ -91,11 +94,10 @@ task-menu .menu_itens .button-md,
 .tabs-ios .tab-button-text {
     color: rgba(243, 127, 114, 1) !important;
     transition: color 0.3s;
+    text-transform: uppercase;
 }
 
-.divider-color,
-.content_list .item-md.item-block .item-inner,
-.content_list .item-ios.item-block .item-inner {
+.divider-color {
     border-color: rgba(189, 189, 189, 0.5) !important;
 }
 
@@ -106,8 +108,9 @@ task-menu .menu_itens .button-md,
 
 .tabs-md .tab-button[aria-selected=true],
 .tabs-ios .tab-button[aria-selected=true] {
-  color: rgba(243, 127, 114, 0) !important;
+    color: rgba(243, 127, 114, 0) !important;
 }
+
 .tabs-md .tab-button[aria-selected=true],
 .tabs-ios .tab-button[aria-selected=true] {
     border-bottom: 3px solid rgba(243, 127, 114, 1);
@@ -124,18 +127,59 @@ task-menu .menu_itens .button-md,
     background-image: none !important;
 }
 
-.popover-md .popover-content,
 .popover-ios .popover-content,
 .item-ios ion-avatar ion-img,
 .item-ios ion-avatar img,
 .item-md ion-avatar ion-img,
 .item-md ion-avatar img {
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 0px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 0px rgba(0, 0, 0, 0.03);
+}
+
+.popover-md {
+    background-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+.popover-md .popover-content {
+    border-radius: 8px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.03);
 }
 
 .popover-md .popover-content,
 .popover-ios .popover-content {
     width: 120px !important;
+    padding: 2px !important;
+}
+
+.header-md::after,
+.header-ios::after {
+    height: 0px !important;
+    background-image: none !important;
+}
+
+.loading-md .loading-wrapper,
+.loading-ios .loading-wrapper,
+.alert-md .alert-wrapper,
+.alert-ios .alert-wrapper {
+    border-radius: 8px !important;
+}
+
+.alert-md .alert-wrapper .alert-head,
+.alert-ios .alert-wrapper .alert-head {
+    padding: 18px 18px 0px !important;
+}
+
+.alert-md .alert-wrapper .alert-message,
+.alert-ios .alert-wrapper .alert-messsage {
+    padding: 8px 18px 8px !important;
+}
+
+.alert-ios .alert-button,
+.alert-md .alert-button {
+    color: #F44336 !important;
+}
+
+.loading-md .spinner-crescent circle {
+    stroke: #F44336 !important;
 }
 
 page-task-create {
@@ -157,19 +201,32 @@ page-task-create {
 page-task-todo,
 page-task-done,
 page-task-doing {
+    .content-md .scroll-content {
+        margin: 56px 0 30px !important;
+    }
+    .content-ios .scroll-content {
+        margin: 45px 0 25px !important;
+    }
     .scroll-content {
-        padding: 0 10px !important;
-        margin: 45px 0 !important;
+        padding: 0 8px !important;
     }
     .content_list {
         .item-ios,
         .item-md {
-            padding-left: 0px !important;
+            padding: 0 16px !important;
+            border-radius: 8px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.03);
+            margin: 8px 0;
         }
-        .label-md,
-        .label-ios {
+        .task_header {
             line-height: 24px !important;
             margin: 0px !important;
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px !important;
+        }
+        .label {
+            margin: 8px 0 !important;
         }
         .button-ios,
         .button-md {
@@ -177,26 +234,41 @@ page-task-doing {
             height: 24px !important;
             margin: 0px !important;
             float: right;
+            font-size: .8em !important;
             box-shadow: none !important;
         }
     }
+    .content_list .item-md.item-block .item-inner,
+    .content_list .item-ios.item-block .item-inner {
+        border: none !important;
+        padding: 0px !important;
+    }
     ion-fab[center] {
-        margin-left: -75.89px;
+        margin-left: -82.475px;
     }
     ion-fab {
         .button-ios,
         .button-md {
-            height: 18px !important;
             border-radius: 24px;
+            height: 36px !important;
             font-size: 14px !important;
             text-transform: uppercase;
-            padding: 1.3em !important;
-            span.btn_text {
-                margin-top: 3px;
-            }
-            ion-icon {
-                margin-right: 10px;
-                font-size: 17px !important;
+            padding: 0 24px 0 0 !important;
+            box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 0px rgba(0, 0, 0, 0.03);
+            .button-inner {
+                padding-left: 16px;
+                min-width: 64px;
+                height: 36px;
+                justify-content: left !important;
+                .text {
+                    margin-top: 0px;
+                }
+                .icon {
+                    width: 20px;
+                    text-align: center;
+                    margin-right: 8px;
+                    font-size: 17px;
+                }
             }
         }
     }

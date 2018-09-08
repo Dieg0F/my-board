@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { Task } from '../../../model/task/task.model';
 import { Loading } from '../../../util/loading/loading';
+import { Toast } from '../../../util/toast/toast';
 
 @IonicPage()
 @Component({
@@ -21,7 +22,8 @@ export class TaskPopoverPage {
     public viewCtrl: ViewController,
     public taskService: TaskService,
     public alert: Alert,
-    public loading: Loading
+    public loading: Loading,
+    public toast: Toast
   ) {
     this.task = this.navParams.get('task');
   }
@@ -31,25 +33,43 @@ export class TaskPopoverPage {
   }
 
   removeTask() {
+    this.popoverClose();
     this.desableClick = true;
     let loadingCompose = {
-      title: 'Removendo Tarefa...'
+      title: 'removendo tarefa...'
     };
     this.loading.show(loadingCompose);
     this.taskService.delete(this.task.uid)
-      .then(() => { console.log("Success"); this.popoverClose()})
-      .catch(() => { console.log("Error"); this.popoverClose()});
+      .then(this.taskSuccess.bind(this, 'Tarefa removida!'))
+      .catch(this.taskError.bind(this, 'Erro ao remover!'));
+  }
+
+  taskSuccess(message: string){
+    this.loading.hide();
+    let toastCompose = {
+      title: message,
+      time: 3000
+    }
+    this.toast.show(toastCompose);
+  }
+
+
+  taskError(message: string){
+    let toastCompose = {
+      title: 'Hou um erro ao criar a tardefa',
+      time: 3000
+    }
+    this.toast.show(toastCompose);
   }
 
   popoverClose(){
-    this.loading.hide();
     this.viewCtrl.dismiss();
   }
 
   removeTaskAlert() {
     let alertCompose = {
-      title: 'Remover Task?',
-      subTitle: 'Deseja remover a tarefa: ' + this.task.title + '?',
+      title: 'Remover tarefa',
+      subTitle: 'Deseja excluir a tarefa ' + this.task.title + '?',
       onConfirm: this.removeTask.bind(this),
       onCancel: this.popoverClose.bind(this)
     }
