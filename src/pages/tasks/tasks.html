@@ -12,8 +12,10 @@
     <ion-title>Tarefas</ion-title>
   </ion-navbar>
 </ion-header>
-<ion-tabs>
-  <ion-tab [root]="toDoPage" tabTitle="To Do" tabIcon="md-list"></ion-tab>
-  <ion-tab [root]="doing" tabTitle="Doing" tabIcon="md-refresh"></ion-tab>
-  <ion-tab [root]="done" tabTitle="Done" tabIcon="md-done-all"></ion-tab>
-</ion-tabs>
+<ion-content>
+  <ion-tabs tabsPlacement="top">
+    <ion-tab [root]="toDoPage" tabTitle="To Do"></ion-tab>
+    <ion-tab [root]="doing" tabTitle="Doing"></ion-tab>
+    <ion-tab [root]="done" tabTitle="Done"></ion-tab>
+  </ion-tabs>
+</ion-content>
