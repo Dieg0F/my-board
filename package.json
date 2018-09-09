@@ -1,7 +1,7 @@
 {
-  "name": "my-board",
-  "version": "0.0.1",
-  "author": "Ionic Framework",
+  "name": "My Board",
+  "version": "1.0.3",
+  "author": "Diego Fraga",
   "homepage": "http://ionicframework.com/",
   "private": true,
   "scripts": {
@@ -29,7 +29,7 @@
     "cordova-android": "7.0.0",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-ionic-keyboard": "^2.1.2",
-    "cordova-plugin-ionic-webview": "^2.1.0",
+    "cordova-plugin-ionic-webview": "^2.1.3",
     "cordova-plugin-splashscreen": "^5.0.2",
     "cordova-plugin-statusbar": "^2.4.2",
     "cordova-plugin-whitelist": "^1.3.3",
@@ -47,7 +47,7 @@
     "@ionic/lab": "1.0.8",
     "typescript": "~2.6.2"
   },
-  "description": "An Ionic project",
+  "description": "Aplication to make a task list and controll your time!",
   "cordova": {
     "plugins": {
       "cordova-plugin-whitelist": {},
