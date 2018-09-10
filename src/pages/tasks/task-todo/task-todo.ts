@@ -21,7 +21,7 @@ export class TaskTodoPage {
   ) { }
 
   ionViewDidLoad() {
-    this.tasks$ = this.taskService.getDoneTasks(false).valueChanges();
+    this.tasks$ = this.taskService.getTasks('TO_DO').valueChanges();
   }
 
   presentPopover(event, task: Task) {

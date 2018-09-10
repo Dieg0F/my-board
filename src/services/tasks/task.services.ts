@@ -14,23 +14,22 @@ export class TaskService {
 
   private setTasks() {
     this.tasks = this.db.collection<Task>('/tasks',
-      (ref: CollectionReference) => ref.orderBy('done', 'asc').orderBy('title', 'asc'));
+      (ref: CollectionReference) => ref.orderBy('status', 'asc').orderBy('title', 'asc'));
   }
 
-  public getDoneTasks(isDone: boolean) {
-    return this.db.collection<Task>('/tasks',
-      (ref: CollectionReference) => ref.where('done', '==', isDone).orderBy('title', 'asc'));
+  public getTasks(status: string) {
+    return this.tasks = this.db.collection<Task>('/tasks',
+      (ref: CollectionReference) => ref.where('status', '==', status).orderBy('title', 'asc'));
   }
 
   public create(task: Task): Promise<void> {
-    console.log("Task: ", task);
     const uid = this.db.createId();
     return this.tasks.doc<Task>(uid)
       .set({
         uid,
         title: task.title,
         description: task.description,
-        done: false
+        status: task.status
       });
   }
 

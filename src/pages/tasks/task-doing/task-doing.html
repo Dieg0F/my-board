@@ -1,3 +1,17 @@
 <ion-content padding>
-
+  <div class="content_list">
+    <ion-item *ngFor="let task of tasks$ | async">
+      <div class="task_header">
+        {{task.title}}
+        <button ion-button icon-only (click)="presentPopover($event, task)">
+          <ion-icon name="md-more"></ion-icon>
+        </button>
+      </div>
+      <div class="task_body">
+        <p *ngIf="task.description">
+          {{task.description}}
+        </p>
+      </div>
+    </ion-item>
+  </div>
 </ion-content>

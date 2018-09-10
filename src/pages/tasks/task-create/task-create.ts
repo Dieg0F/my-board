@@ -13,7 +13,8 @@ export class TaskCreatePage {
   public changeBgModal: boolean = false;
   public blockBtn: boolean = false;
   public task: Task = {
-    title: ''
+    title: '',
+    status: 'TO_DO'
   };
 
   constructor(

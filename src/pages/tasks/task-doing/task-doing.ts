@@ -1,12 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, PopoverController, ModalController } from 'ionic-angular';
+import { Observable } from 'rxjs';
+import { Task } from '../../../model/task/task.model';
+import { TaskService } from '../../../services/tasks/task.services';
 
-/**
- * Generated class for the TaskDoingPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -15,11 +12,25 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class TaskDoingPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
-  }
+  tasks$: Observable<Task[]>;
+
+  constructor(
+    public navCtrl: NavController,
+    public popoverCtrl: PopoverController,
+    public modalCtrl: ModalController,
+    public taskService: TaskService
+  ) { }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TaskDoingPage');
+    this.tasks$ = this.taskService.getTasks('TO_DOING').valueChanges();
   }
 
+  presentPopover(event, task: Task) {
+    let popover = this.popoverCtrl.create('TaskPopoverPage', {
+      task: task
+    });
+    popover.present({
+      ev: event
+    });
+  }
 }
