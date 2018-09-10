@@ -19,6 +19,7 @@
 }
 
 .default-primary-color,
+.login_header,
 .toolbar-background-md,
 .toolbar-background-ios,
 .tabs-md .tabbar,
@@ -37,6 +38,7 @@ ion-fab .button-md {
 }
 
 .text-primary-color,
+.login_header,
 .toolbar-title-md,
 .toolbar-title-ios,
 .toolbar-ios .bar-button-default-ios,
@@ -72,6 +74,8 @@ page-task-todo .fab-ios,
 .primary-text-color,
 .content_list .label-ios,
 .content_list .label-md,
+.footer_buttons .button-md,
+.footer_buttons .button-ios,
 .modal_component .title>.toolbar-title-md,
 .modal_component .title>.toolbar-title-ios {
     color: #212121 !important;

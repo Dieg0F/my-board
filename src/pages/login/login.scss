@@ -2,6 +2,19 @@ page-login {
     display: flex;
     align-content: center;
     justify-content: center;
+    .login_header {
+        text-align: center;
+        height: 30vh;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+        vertical-align: center;
+        h1 {
+            margin: 0px !important;
+            line-height: 30vh;
+            font-size: 36px !important;
+        }
+    }
     .login {
         margin-top: 35px;
         padding: 16px;
@@ -16,6 +29,25 @@ page-login {
         .button-md {
             margin-top: 20px;
             width: 100%;
+        }
+    }
+    .footer-ios::before,
+    .footer-md::before{
+      background-image: none !important;
+      height: 0px !important;
+    }
+    .footer_buttons {
+      padding: 0 16px;
+        div {
+            width: 50%;
+            float: left;
+            text-align: center;
+            .button-ios,
+            .button-md {
+                margin: 10px auto !important;
+                background-color: transparent !important;
+                box-shadow: none !important;
+            }
         }
     }
 }
