@@ -2,22 +2,36 @@ page-login {
     display: flex;
     align-content: center;
     justify-content: center;
+    .scroll-content {
+        padding: 60px 16px 16px;
+    }
+    .login_card {
+        background: #fff;
+        border-radius: 8px;
+        margin-bottom: 16px;
+    }
     .login_header {
-        text-align: center;
         height: 30vh;
         display: flex;
         align-content: center;
         justify-content: center;
         vertical-align: center;
+        text-align: center;
+        padding-top: 35px;
         h1 {
             margin: 0px !important;
             line-height: 30vh;
             font-size: 36px !important;
         }
+        img {
+            width: 64px;
+            height: 64px;
+            display: block;
+            position: absolute;
+        }
     }
     .login {
-        margin-top: 35px;
-        padding: 16px;
+        padding: 0 16px 16px;
         .item-md,
         .item-ios {
             padding-left: 0px !important;
@@ -25,29 +39,50 @@ page-login {
                 padding: 0 5px;
             }
         }
-        .button-ios,
-        .button-md {
-            margin-top: 20px;
-            width: 100%;
+        .login_options {
+            .button-ios,
+            .button-md {
+                margin: 20px 0 0;
+                min-width: 64px !important;
+                float: right;
+                padding: 0 16px !important;
+                height: 36px !important;
+            }
         }
     }
-    .footer-ios::before,
-    .footer-md::before{
-      background-image: none !important;
-      height: 0px !important;
+    .footer_buttons:before {
+        clear: both;
     }
     .footer_buttons {
-      padding: 0 16px;
+        width: 80%;
+        margin: 0 auto;
         div {
             width: 50%;
             float: left;
             text-align: center;
             .button-ios,
             .button-md {
-                margin: 10px auto !important;
+                margin: 0 !important;
                 background-color: transparent !important;
                 box-shadow: none !important;
+                font-size: 12px !important;
+                height: 36px !important;
+                opacity: 0.5;
             }
+        }
+    }
+    .build_it {
+        width: 150px;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        margin-left: -75px;
+        p {
+            margin: 0px;
+            color: #fff;
+            opacity: 0.5;
+            text-align: center;
+            font-size: 12px;
         }
     }
 }

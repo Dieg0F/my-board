@@ -1,0 +1,22 @@
+<ion-content padding>
+    <div class="modal_component">
+      <ion-toolbar>
+        <ion-title>Nova Tarefa</ion-title>
+      </ion-toolbar>
+      <div class="new_task_body">
+        <ion-item>
+          <ion-label stacked>Nome: </ion-label>
+          <ion-input type="text" [(ngModel)]="task.title"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label stacked>Descrição: </ion-label>
+          <ion-textarea type="text" [(ngModel)]="task.description"></ion-textarea>
+        </ion-item>
+        <button ion-button (click)="addTask()" [disabled]="blockBtn">
+          Criar
+        </button>
+      </div>
+    </div>
+    <div [class.modal-bg]="changeBgModal" class="modal_backDrop" (click)="modalClose()">
+    </div>
+  </ion-content>

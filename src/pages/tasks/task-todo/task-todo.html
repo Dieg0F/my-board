@@ -7,7 +7,7 @@
           <ion-icon name="md-more"></ion-icon>
         </button>
       </div>
-      <div class="task_body">
+      <div class="task_body"  (click)="showTask(task)">
         <p *ngIf="task.description">
           {{task.description}}
         </p>

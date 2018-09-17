@@ -18,8 +18,13 @@
     background: #D32F2F !important;
 }
 
+page-login .scroll-content {
+    background-color: rgba(244, 67, 54, 1);
+    background: filter-gradient(#f44336, #d32f2f, horizontal);
+    background: background-image(linear-gradient(left top, rgba(244, 67, 54, 1) 0%, rgba(211, 47, 47, 1) 100%));
+}
+
 .default-primary-color,
-.login_header,
 .toolbar-background-md,
 .toolbar-background-ios,
 .tabs-md .tabbar,
@@ -38,11 +43,12 @@ ion-fab .button-md {
 }
 
 .text-primary-color,
-.login_header,
 .toolbar-title-md,
 .toolbar-title-ios,
 .toolbar-ios .bar-button-default-ios,
 .toolbar-md .bar-button-default-md,
+.footer_buttons .button-ios,
+.footer_buttons .button-md,
 task-menu .card-md h1,
 task-menu .card-ios h1,
 task-menu .card-md .item-md h2,
@@ -74,22 +80,23 @@ page-task-todo .fab-ios,
 .primary-text-color,
 .content_list .label-ios,
 .content_list .label-md,
-.footer_buttons .button-md,
-.footer_buttons .button-ios,
 .modal_component .title>.toolbar-title-md,
 .modal_component .title>.toolbar-title-ios {
     color: #212121 !important;
 }
 
 .secondary-text-color,
+.login_header,
 .content_list .button-ios,
 .content_list .button-md,
 task-menu .menu_itens .button-ios,
 task-menu .menu_itens .button-md,
 .content_list .text_body,
+.login .item-input .label-ios,
+.login .item-input .label-md,
 .popoverContent .button-md,
 .popoverContent .button-ios {
-    color: #757575
+    color: #757575 !important;
 }
 
 .tabs-md .tab-button-icon,
@@ -101,7 +108,9 @@ task-menu .menu_itens .button-md,
     text-transform: uppercase;
 }
 
-.divider-color {
+.divider-color,
+.login .item-ios.item-block .item-inner,
+.login .item-md.item-block .item-inner {
     border-color: rgba(189, 189, 189, 0.5) !important;
 }
 
@@ -135,7 +144,8 @@ task-menu .menu_itens .button-md,
 .item-ios ion-avatar ion-img,
 .item-ios ion-avatar img,
 .item-md ion-avatar ion-img,
-.item-md ion-avatar img {
+.item-md ion-avatar img,
+page-login .login_card {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 0px rgba(0, 0, 0, 0.03);
 }
 
@@ -277,4 +287,35 @@ page-task-doing {
             }
         }
     }
+}
+
+.item.item-md .checkbox-md,
+.item.item-ios .checkbox-ios {
+    margin: 8px 16px !important;
+}
+
+.item-md.item-input.item-input-has-focus .item-inner,
+.item-md.item-input.input-has-focus .item-inner {
+    border-bottom-color: #616161 !important;
+    -webkit-box-shadow: inset 0 -1px 0 0 #616161 !important;
+    box-shadow: inset 0 -1px 0 0 #616161 !important;
+}
+
+.item-input-has-focus .label-md[stacked],
+.input-has-focus .label-md[stacked],
+.item-input-has-focus .label-md[floating],
+.input-has-focus .label-md[floating] {
+    color: #616161 !important;
+}
+
+.item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner,
+.item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #4CAF50 !important;
+    box-shadow: inset 0 -1px 0 0 #4CAF50 !important;
+}
+
+.item-md.item-input.ng-invalid.ng-touched:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border-bottom-color: #e53935 !important;
+    -webkit-box-shadow: inset 0 -1px 0 0 #e53935 !important;
+    box-shadow: inset 0 -1px 0 0 #e53935 !important;
 }

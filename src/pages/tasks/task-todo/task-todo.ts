@@ -37,4 +37,12 @@ export class TaskTodoPage {
     let modal = this.modalCtrl.create('TaskCreatePage')
     modal.present();
   }
+
+  showTask(task: Task){
+    console.log("XXXX");
+    let modal = this.modalCtrl.create('TaskConfigurationPage', {
+      task: task
+    })
+    modal.present();
+  }
 }

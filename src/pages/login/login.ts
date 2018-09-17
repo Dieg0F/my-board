@@ -9,6 +9,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 })
 export class LoginPage {
 
+  public remember: boolean = false;
+
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,

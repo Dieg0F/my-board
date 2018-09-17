@@ -1,22 +1,26 @@
 <ion-content>
-  <div class="login_header">
-    <h1>My Board</h1>
+  <div class="login_card">
+    <div class="login_header">
+      <img src="../../assets/icon/icon_login.png">
+      <h1>My Board</h1>
+    </div>
+    <div class="login">
+      <ion-item>
+        <ion-label stacked>Username</ion-label>
+        <ion-input type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label stacked>Password</ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+      <div class="login_options">
+        <button ion-button (click)="login()">
+          Entrar
+        </button>
+        <div style="clear: both;"></div>
+      </div>
+    </div>
   </div>
-  <div class="login">
-    <ion-item>
-      <ion-label stacked>Username</ion-label>
-      <ion-input type="text"></ion-input>
-    </ion-item>
-    <ion-item>
-      <ion-label stacked>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-    <button ion-button (click)="login()">
-      Entrar
-    </button>
-  </div>
-</ion-content>
-<ion-footer>
   <div class="footer_buttons">
     <div>
       <button ion-button>Nova conta</button>
@@ -25,4 +29,8 @@
       <button ion-button>Nova senha</button>
     </div>
   </div>
-</ion-footer>
+  <div style="clear: both;"></div>
+  <div class="build_it">
+    <p>Build with Ionic and Firebase!</p>
+  </div>
+</ion-content>
