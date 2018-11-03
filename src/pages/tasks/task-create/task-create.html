@@ -12,6 +12,9 @@
         <ion-label stacked>Descrição: </ion-label>
         <ion-textarea type="text" [(ngModel)]="task.description"></ion-textarea>
       </ion-item>
+      <button ion-button  (click)="getDate()" [disabled]="blockBtn">
+        Date
+      </button>
       <button ion-button (click)="addTask()" [disabled]="blockBtn">
         Criar
       </button>

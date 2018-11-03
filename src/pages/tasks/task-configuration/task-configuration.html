@@ -1,20 +1,20 @@
 <ion-content padding>
-    <div class="modal_component">
-      <ion-toolbar>
-        <ion-title>{{task.title}}</ion-title>
-      </ion-toolbar>
-      <div class="new_task_body">
-        <div>
-          {{task.description}}
-        </div>
-        <div>
-          Task Progress: 0%
-        </div>
-        <div>
+  <div class="modal_component">
+    <ion-toolbar>
+      <ion-title>{{task.title}}</ion-title>
+    </ion-toolbar>
+    <div class="new_task_body">
+      <div>
+        {{task.description}}
+      </div>
+      <div>
+        Task Progress: 0%
+      </div>
+      <div>
 
-        </div>
       </div>
     </div>
-    <div [class.modal-bg]="changeBgModal" class="modal_backDrop" (click)="modalClose()">
-    </div>
-  </ion-content>
+  </div>
+  <div [class.modal-bg]="changeBgModal" class="modal_backDrop" (click)="modalClose()">
+  </div>
+</ion-content>

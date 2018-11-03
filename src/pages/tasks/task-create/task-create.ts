@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { TaskService } from '../../../services/tasks/task.services';
 import { Task } from '../../../model/task/task.model';
+import { DateWindow } from '../../../util/date/dateWindow';
 
 @IonicPage()
 @Component({
@@ -21,6 +22,7 @@ export class TaskCreatePage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
+    public dateWindow: DateWindow,
     public taskService: TaskService) {
   }
 
@@ -28,20 +30,23 @@ export class TaskCreatePage {
     this.changeBgModal = true;
   }
 
-  addTask(){
-    if(!this.task.title) return;
+  addTask() {
+    if (!this.task.title) return;
     this.blockBtn = true;
     this.taskService.create(this.task)
-    .then(() => this.modalClose())
-    .catch(() => console.log('Error'));
+      .then(() => this.modalClose())
+      .catch(() => console.log('Error'));
   }
 
-  modalClose(){
+  modalClose() {
     this.changeBgModal = false;
-    setTimeout(()=>{
+    setTimeout(() => {
       this.viewCtrl.dismiss();
     }, 300);
   }
 
+  getDate() {
+    this.dateWindow.getDate()
+  }
 
 }

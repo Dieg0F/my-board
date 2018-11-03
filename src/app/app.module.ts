@@ -13,6 +13,8 @@ import { TaskService } from '../services/tasks/task.services';
 import { Alert } from '../util/alert/alert';
 import { Loading } from '../util/loading/loading';
 import { Toast } from '../util/toast/toast';
+import { DateWindow } from '../util/date/dateWindow';
+import { DatePicker } from '@ionic-native/date-picker';
 
 export const firebase = {
   apiKey: 'AIzaSyCCOGwrfmWqxw9CsW1N2yrV7oIHXF-kpeQ',
@@ -46,6 +48,8 @@ export const firebase = {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     TaskService,
     Alert,
+    DateWindow,
+    DatePicker,
     Loading,
     Toast
   ]
