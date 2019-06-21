@@ -1,7 +1,7 @@
 import { Alert } from './../../../util/alert/alert';
 import { TaskService } from './../../../services/tasks/task.services';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 import { Task } from '../../../model/task/task.model';
 import { Loading } from '../../../util/loading/loading';
 import { Toast } from '../../../util/toast/toast';
@@ -23,6 +23,7 @@ export class TaskPopoverPage {
     public taskService: TaskService,
     public alert: Alert,
     public loading: Loading,
+    public modalCtrl: ModalController,
     public toast: Toast
   ) {
     this.task = this.navParams.get('task');
@@ -30,6 +31,11 @@ export class TaskPopoverPage {
 
   editTask() {
     this.desableClick = true;
+    let modal = this.modalCtrl.create('TaskEditPage', {
+      task: this.task
+    })
+    modal.present();
+    this.popoverClose();
   }
 
   removeTask() {
@@ -44,7 +50,7 @@ export class TaskPopoverPage {
       .catch(this.taskError.bind(this, 'Erro ao remover!'));
   }
 
-  taskSuccess(message: string){
+  taskSuccess(message: string) {
     this.loading.hide();
     let toastCompose = {
       title: message,
@@ -53,8 +59,7 @@ export class TaskPopoverPage {
     this.toast.show(toastCompose);
   }
 
-
-  taskError(message: string){
+  taskError(message: string) {
     let toastCompose = {
       title: 'Hou um erro ao criar a tardefa',
       time: 3000
@@ -62,7 +67,7 @@ export class TaskPopoverPage {
     this.toast.show(toastCompose);
   }
 
-  popoverClose(){
+  popoverClose() {
     this.viewCtrl.dismiss();
   }
 

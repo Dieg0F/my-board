@@ -1,0 +1,55 @@
+page-task-edit {
+  .modal-bg {
+      background: rgba(0, 0, 0, 0.5) !important;
+  }
+  .modal_backDrop {
+      width: 100%;
+      min-height: 100%;
+      padding: 0 10px;
+      background: transparent;
+      z-index: 10;
+  }
+  .modal_component {
+      height: 55vh;
+      width: calc(100% - 20px);
+      position: absolute;
+      left: 10px;
+      bottom: 0px;
+      background-color: #fff !important;
+      border-radius: 8px 8px 0px 0px;
+      padding: 8px 12px;
+      .toolbar-title-md{
+        padding: 0px 4px !important;
+      }
+  }
+  .modal_component .toolbar-background-ios,
+  .modal_component .toolbar-background-md {
+      background: transparent !important;
+  }
+  .new_task_body {
+      padding: 0px 8px;
+      overflow-y: scroll;
+      height: calc(100% - 46px);
+      .item-md,
+      .item-ios {
+          padding-left: 0px !important;
+          input, textarea {
+              padding: 0 5px;
+          }
+          textarea {
+            min-height: 50px;
+          }
+      }
+      .button-ios,
+      .button-md {
+          margin: 20px 0 0;
+          border-radius: 4px;
+          min-width: 64px;
+          float: right;
+          padding: 0 16px !important;
+          color: #fff;
+          background-color: #F44336 !important;
+          box-shadow: none !important;
+      }
+  }
+}
